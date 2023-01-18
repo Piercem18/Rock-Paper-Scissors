@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let playerScore=0
+         let computerScore=0
+         let computerChoices=["rock","paper","scissors"];
+        let computerSelection= computerChoices[Math.floor(Math.random()*3)];
+        
+     
+ 
+         function getComputerChoice (){
+             let computerChoices=["rock","paper","scissors"];
+              let computerSelection= computerChoices[Math.floor(Math.random()*3)];
+              return computerSelection
+         };
+ 
+         function getUserChoice(userInput){
+             userInput=userInput.tolowercase
+             if(userInput==="rock"||"paper"||"scissors"){
+                 let playerSelection=userInput
+                 return playerSelection
+             }else{
+                 return("invalid input")
+         }};
+
+         let userInput= getUserChoice
+         let playerSelection=userInput
+ 
+         let playRound=(playerSelection,computerSelection)=>{
+             
+             if(getComputerChoice==="rock" && getUserChoice==="scissors"){
+                roundResult.textContext= "You lost!"
+                 computerScore++
+                 return computerSelection
+         };
+         if(getComputerChoice==="rock" && getUserChoice==="paper"){
+                 console.log( "You won!")
+                 playerScore++
+                 return playerSelection
+         };
+         if(getComputerChoice==="paper" && getUserChoice==="rock"){
+            console.log( "You lost!")
+             computerScore++
+             return computerSelection
+         };
+           
+         if(getComputerChoice==="paper" && getUserChoice==="scissors"){
+            console.log( "You won!")
+                 playerScore++
+                 return playerSelection
+             };
+         if(getComputerChoice==="scissors" && getUserChoice==="rock"){
+            console.log( "You won!")
+             playerScore++
+             return playerSelection
+         };
+         if(getComputerChoice==="scissors" && getUserChoice==="paper"){
+            console.log( "You lost!")
+             computerScore++
+             return computerSelection
+         };
+             
+         if(getComputerChoice===getUserChoice){
+             console.log( "tie")
+         }};
+ 
+     const game=()=>{
+         for(let i=0;i<5;i++){
+            let playerSelection=prompt("Rock, Paper, Scissors?")
+            playerSelection.toLowerCase()
+            let computerSelection=getComputerChoice();
+            playRound(playerSelection,computerSelection);
+            console.log(`You chose ${playerSelection} and the computer chose ${ computerSelection}`);
+           
+         };
+     };
+       const ultimateWinner=()=>{ if (playerScore>=3){
+            console.log( "Player wins")
+        }else{
+            console.log("Computer Wins")
+        }};
+
+        
+        playRound(game(playerSelection,computerSelection))
+         ultimateWinner()
+     
+     </script>
+ 
+ </html>
+ 
+</body>
+</html>
